@@ -1,0 +1,125 @@
+<!----// By nightcoreat \\---->
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Embed Maker</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div id="headContainer">
+        <h2>✨ EmbedMaker</h2>
+    </div>
+
+    <div id="mainContainer">
+
+        <div id="formContainer">
+
+            <h5> TITLE </h5>
+            <hr>
+            <div>
+                <label for="titleInput">Title:</label>
+                <input type="text" id="titleInput" placeholder="Embed Title">
+            </div>
+
+            <h5> AUTHOR </h5>
+            <hr>
+            <div>
+                <label for="authorNameInput">Name:</label>
+                <input type="text" id="authorNameInput" placeholder="Author Name">
+            </div>
+            <div>
+                <label for="authorIconInput">Icon:</label>
+                <input type="text" id="authorIconInput" placeholder="Author Icon URL">
+            </div>
+
+            <h5> DESCRIPTION </h5>
+            <hr>
+            <div>
+                <label for="descriptionInput">Description:</label>
+                <textarea id="descriptionInput" placeholder="Insert your Description"></textarea>
+            </div>
+
+            <h5> FIELDS </h5>
+            <hr>
+            <div>
+                <label for="fieldTitleInput">Name:</label>
+                <input type="text" id="fieldTitleInput" placeholder="String">
+
+                <label for="fieldValueInput">Value:</label>
+                <input type="text" id="fieldValueInput" placeholder="Value">
+
+                <label for="inlineInput">Inline ?</label>
+                <input type="checkbox" id="inlineInput">
+
+                <button onclick="addField()">Add Field</button>
+            </div>
+
+            <h3>Added Fields:</h3>
+            <div id="fieldsContainer">
+                <button onclick="removeFields()">Delete All Existing Fields</button>
+            </div>
+
+            <h5> THUMBNAIL </h5>
+            <hr>
+            <div>
+                <label for="thumbnailInput">Thumbnail Url:</label>
+                <input type="text" id="thumbnailInput" placeholder="Thumbnail Url">
+            </div>
+
+            <h5> IMAGE </h5>
+            <hr>
+            <div>
+                <label for="imageInput">Url:</label>
+                <input type="text" id="imageInput" placeholder="Image URL">
+            </div>
+
+            <h5> FOOTER </h5>
+            <hr>
+            <div>
+                <label for="footerInput">Text:</label>
+                <input type="text" id="footerInput" placeholder="Footer Text">
+            </div>
+
+            <div>
+                <label for="footerIconInput">Icon:</label>
+                <input type="text" id="footerIconInput" placeholder="Footer Icon URL">
+            </div>
+
+            <h5> COLOR </h5>
+            <hr>
+            <h3>Embed Color:</h3>
+            <p id="selectedColor"></p>
+            <button id="openColorPickerBtn">Change Color</button>
+
+            <h5> EMBED </h5>
+            <hr>
+            <button onclick="generateEmbed()">Generate</button>
+            <button onclick="resetInputs()">Reset</button>
+
+            <h5> OUTPUT </h5>
+            <hr>
+            <div style="position: relative;">
+                <pre id="output"></pre>
+                    <button id="copyBtn" onclick="copyJSON()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer;">
+                        <img src="https://img.icons8.com/ios/452/copy.png" alt="Copy" width="20" height="20" />
+                    </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="previewContainer">
+        <h5>PREVIEW</h5>
+        <hr>
+        <div id="preview"></div>
+    </div>
+    
+    <div id="copyrightContainer">
+        <h2>Red Shadows</h2>
+    </div>
+    <script src="utils/copyManager.js"></script>
+    <script src="utils/colorManager.js"></script>
+    <script src="utils/embedBuilder.js"></script>
+</body>
+</html>
