@@ -1,0 +1,269 @@
+/* By nightcoreat */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; 
+}
+
+h2 {
+    color: #5865F2;
+    text-align: center;
+}
+
+h5 {
+    color: #5865F2;
+    text-align: center;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #5865F2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4a5bd8;
+}
+
+#previewContainer {
+    background-color: #202225; 
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%; 
+    max-width: 400px;
+    margin-top: 20px;
+    margin-left: auto; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 20px; 
+    height: 100%; 
+}
+
+#previewContainer h5 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: left;
+}
+
+#previewContainer hr {
+    border: 0;
+    height: 1px;
+    background-color: #5865F2;
+    margin-bottom: 20px;
+}
+
+#preview {
+    background-color: #2f3136;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 700px;
+    margin: 20px auto;
+    position: relative;
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left: 4px solid #5865F2;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#preview h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+#preview p {
+    margin: 0;
+    font-size: 14px;
+    color: #b9bbbe;
+}
+
+#preview .author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+}
+
+#preview .author img {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    border-radius: 50%;
+    object-fit: cover; 
+    max-width: 20px;   
+    max-height: 20px;  
+}
+
+#preview .field-preview {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 5px; 
+}
+
+#preview .field-preview strong {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+#preview .field-preview p {
+    margin-top: 4px;
+    font-size: 13px;
+    color: #b9bbbe;
+}
+
+#preview .fields-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+}
+
+#preview .field-preview.inline {
+    display: inline-flex;
+    align-items: flex-start;
+    flex-direction: column; 
+    width: calc(33.33% - 10px); 
+    box-sizing: border-box;
+    margin-right: 10px;
+    margin-bottom: 10px; 
+}
+
+#preview .field-preview.inline p {
+    margin-top: 5px; 
+}
+
+#preview .field-preview.block {
+    display: block;
+    width: 80%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#preview .thumbnail {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#preview img:not(.thumbnail) {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+#preview .footer {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #b9bbbe;
+    margin-top: 10px;
+}
+
+#preview .footer img {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    border-radius: 50%;
+}
+
+#openColorPickerBtn {
+    padding: 10px 20px;
+    background-color: #5865F2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#headContainer {
+    position: fixed;   
+    top: 0;            
+    left: 0;           
+    right: 0;         
+    padding: -50px;  
+    text-align: center;  
+    width: 100%;          
+    z-index: 1000;       
+    background: linear-gradient(
+        to bottom,
+        #8878c0 0%,
+        #aab0d0 33%,
+        #cccce0 67%,
+        #f4f4f9 100%
+    );
+}
+
+#mainContainer {
+    width: 65%;              
+    overflow-y: auto;         
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 20px;      
+    max-height: 100vh;        
+    border: 1px solid #ccc;   
+    border-radius: 8px;       
+    box-sizing: border-box;   
+}
+
+#copyrightContainer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;                      
+    text-align: center;
+    line-height: 20px;            
+    font-size: 14px;
+    z-index: 1000;
+    box-sizing: border-box;
+    background: linear-gradient(
+        to top,
+        #8878c0 0%,
+        #aab0d0 33%,
+        #cccce0 67%,
+        #f4f4f9 100%
+    );
+}
+
+#copyBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#copyBtn img {
+    width: 20px;
+    height: 20px;
+}
